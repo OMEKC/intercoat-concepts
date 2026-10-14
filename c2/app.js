@@ -44,14 +44,15 @@
   doc.classList.add('motion');
 
   /* Scroll reveals: opacity only, once; elements keep their final layout space. */
-  var targets = document.querySelectorAll('.section-top,.about-body,.application,.series-item,.product-feature,.tech-photo,.process-step,.custom-panel,.nature-panel,.cert-top,.document-link,.news-card,.contact-panel,.fact,.footer-top');
+  var targets = document.querySelectorAll('.section-heading,.about-intro,.fact,.presence,.pathway,.application,.series-image,.series-item,.series-enquiry,.tech-visual,.process-step,.custom-layout,.innovation,.nature-layout,.quality-mark,.quality-bottom,.news-card,.contact-panel,.footer-top');
   [].forEach.call(targets, function (el, i) { el.classList.add('reveal'); });
   [].forEach.call(document.querySelectorAll('.application'), function (el, i) { el.style.transitionDelay = (i * 60) + 'ms'; });
   [].forEach.call(document.querySelectorAll('.series-item'), function (el, i) { el.style.transitionDelay = (i * 45) + 'ms'; });
   [].forEach.call(document.querySelectorAll('.news-card'), function (el, i) { el.style.transitionDelay = (i * 60) + 'ms'; });
   [].forEach.call(document.querySelectorAll('.fact'), function (el, i) { el.style.transitionDelay = (i * 60) + 'ms'; });
 
-
+  /* Map markers are visible immediately: motion is reserved for the reveals above. */
+  
   function countUp(el) {
     var end = +el.dataset.count, t0 = null, dur = 800;
     function step(t) { if (!t0) t0 = t; var p = Math.min((t - t0) / dur, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); }

@@ -44,7 +44,7 @@
   doc.classList.add('motion');
 
   /* Scroll reveals: opacity only, once; elements keep their final layout space. */
-  var targets = document.querySelectorAll('.section-top,.presence,.info,.application,.series-item,.series-photo,.tech-photo,.process-step,.custom-panel,.custom-basis,.nature-panel,.cert-intro,.cert-cell,.news-card,.contact-panel,.fact,.footer-top');
+  var targets = document.querySelectorAll('.section-top,.about-body,.application,.series-item,.product-feature,.tech-photo,.process-step,.custom-panel,.nature-panel,.cert-top,.document-link,.news-card,.contact-panel,.fact,.footer-top');
   [].forEach.call(targets, function (el, i) { el.classList.add('reveal'); });
   [].forEach.call(document.querySelectorAll('.application'), function (el, i) { el.style.transitionDelay = (i * 60) + 'ms'; });
   [].forEach.call(document.querySelectorAll('.series-item'), function (el, i) { el.style.transitionDelay = (i * 45) + 'ms'; });

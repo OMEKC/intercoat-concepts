@@ -1,0 +1,26 @@
+/* V1: light typography, orange corners, editorial news lead, dark product table. */
+:root{--h1:clamp(44px,6.4vw,96px);--h2:clamp(30px,3.6vw,52px);--muted:var(--g4)}
+.hd{border-bottom:1px solid var(--line)}
+.hd-in{gap:24px}.brand img{height:25px}.nav{font-size:14px;gap:17px}.hd-act{gap:10px}.btn-hd{padding:10px 18px}
+.hero-in{padding-top:56px;padding-bottom:56px;align-items:end}.hero h1{grid-column:1/9;max-width:15ch}.hero-side{grid-column:9/13;padding-right:24px}
+.tri-a{right:0;top:0;width:72px;height:72px;background:var(--orange);clip-path:polygon(100% 0,100% 100%,0 0)}
+.news{padding-top:44px;border-top:1px solid var(--line)}
+.news .sec-head{margin-bottom:28px}.news h2{font-size:40px}
+.news-grid{grid-template-columns:1.12fr 1fr;gap:0 56px;align-items:start}
+.ncard.is-lead{grid-column:1;grid-row:1/4}.ncard:not(.is-lead){grid-column:2;display:grid;grid-template-columns:148px 1fr;gap:20px;border-top:1px solid var(--line);padding:24px 0}
+.ncard:nth-child(2){padding-top:0;border:0}.ncard:last-child{padding-bottom:0}
+.ncard:not(.is-lead) .nimg{aspect-ratio:1;height:148px}.ncard:not(.is-lead) .nbody{padding:0;gap:10px}.ncard:not(.is-lead) h3{font-size:22px}.ncard:not(.is-lead) p{font-size:14px;line-height:1.4}.ncard:not(.is-lead) .ncta{font-size:14px;margin-top:4px}
+.is-lead .nimg{aspect-ratio:1.6}.is-lead .nbody{gap:16px;padding-top:24px}.is-lead h3{font-size:32px;max-width:24ch}.is-lead p{max-width:58ch}.is-lead .ncta{margin-top:8px}
+.company{background:var(--g1)}.co-photo img{aspect-ratio:1.05}.co-text h2{max-width:18ch}
+.certs{padding-block:72px}.cert-body{border-block:1px solid var(--line);padding-block:32px}.logos{gap:32px}.logos li{height:48px}.certs .sec-head{margin-bottom:32px}.certs h2{font-size:40px}.certs .sec-head>div{display:flex;align-items:start;gap:64px;width:100%}.certs .sub{margin-top:0;max-width:42ch}
+.steps{background:var(--blue);color:var(--white);--muted:var(--pale);--line:var(--mid)}.steps .ring{color:var(--white)}.steps h2{max-width:17ch}.step-top{margin-bottom:32px}
+.choose .req-list{gap:24px}.req-img{aspect-ratio:1.1}.req h3{font-size:25px}.req .chip{background:var(--g1);border:0}.req .chips{gap:6px}.req p{font-size:16px}
+.audit{background:var(--g1)}.audit h2{max-width:15ch}.au-body{border-top:1px solid var(--line);padding-top:40px}.au-photo img{aspect-ratio:1.1}
+.series{background:var(--navy);color:var(--white);--line:var(--g4);--muted:var(--pale);--alt:var(--blue);--bg:var(--navy);--ink:var(--white)}
+.series .sec-head{display:grid;grid-template-columns:1fr 1fr}.series .sec-head>div{display:contents}.series .sub{margin-top:0}.series .srow:hover .sname{color:var(--orange)}.series .sdoc:hover{background:var(--orange);border-color:var(--orange);color:var(--white)}
+.nature .na-photo{grid-column:1/6;grid-row:1}.nature .na-text{grid-column:7/13}.nature .na-photo img{aspect-ratio:1}.nature .na-text h2{color:var(--blue)}
+.cta{background:var(--blue);color:var(--white);--muted:var(--pale)}.cta h2{max-width:17ch}.cta .btn{background:var(--orange)}.cta .btn:hover{background:var(--white);color:var(--navy)}.tri-b{width:100px;height:100px;background:var(--orange);clip-path:polygon(0 0,100% 100%,0 100%)}
+.ft{background:var(--navy);color:var(--white)}
+@media(max-width:1000px){.hero-side{padding-right:0}.news-grid{gap:0 32px}.ncard:not(.is-lead){grid-template-columns:100px 1fr;gap:16px}.ncard:not(.is-lead) .nimg{height:100px}.ncard:not(.is-lead) p{display:none}.certs .sec-head>div{display:block}.certs .sub{margin-top:20px}.nature .na-text,.nature .na-photo{grid-column:1/-1;grid-row:auto}.nature .na-photo img{aspect-ratio:3/2}}
+@media(max-width:900px){.hero h1,.hero-side{grid-column:1/-1}.hero h1{max-width:14ch}.hero-in{padding-top:40px;padding-bottom:40px}.hero-side{max-width:45ch;gap:20px}.tri-a{width:44px;height:44px}}
+@media(max-width:700px){.news-grid{display:flex;flex-direction:column;gap:32px}.ncard.is-lead{display:flex}.ncard:not(.is-lead){display:flex;border-top:1px solid var(--line);padding-top:32px;padding-bottom:0;gap:0}.ncard:not(.is-lead) .nimg{height:auto;aspect-ratio:16/10}.ncard:not(.is-lead) .nbody{padding-top:20px}.ncard:not(.is-lead) p{display:block;font-size:15px}.is-lead h3,.ncard:not(.is-lead) h3{font-size:26px}.news h2,.certs h2{font-size:32px}.series .sec-head{display:block}.series .sec-head>div{display:block}.series .sub{margin-top:20px}.co-text h2{max-width:none}.tri-b{width:64px;height:64px}.ft{padding-bottom:12px}}

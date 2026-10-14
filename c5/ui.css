@@ -1,0 +1,58 @@
+/* Shared behaviour styles: popup, form fields, slider controls, secondary links, triangles. Font: Aeonik Pro only. */
+:root{--ic-ease:cubic-bezier(.16,1,.3,1)}
+[hidden]{display:none!important}
+body.ic-lock,body.menu-lock{overflow:hidden}
+
+/* ---------- popup ---------- */
+.ic-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px}
+.ic-ov{position:absolute;inset:0;background:rgba(15,31,56,.58);animation:ic-fade .18s ease both}
+.ic-box{position:relative;width:100%;max-width:560px;max-height:calc(100dvh - 48px);overflow:auto;background:var(--white,#FEFEFE);color:var(--navy,#0F1F38);padding:48px;border-radius:var(--r-modal,0);box-shadow:0 30px 80px rgba(15,31,56,.28);animation:ic-in .22s var(--ic-ease) both;outline:0}
+.ic-x{position:absolute;top:12px;right:12px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:inherit;border-radius:var(--r-btn,0);transition:background .18s ease}
+.ic-x:hover{background:rgba(15,31,56,.07)}
+.ic-x svg{width:18px;height:18px}
+.ic-pane h3{font-size:30px;line-height:34px;letter-spacing:-.02em;margin:0 0 28px;padding-right:48px}
+.ic-pane .mform{display:flex;flex-direction:column;gap:22px}
+.ic-pane .mform h3{margin:0 0 6px}
+.field{display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #6E7681;padding-bottom:10px;transition:border-color .18s ease}
+.field:focus-within{border-bottom-color:var(--blue,#1D3B7B)}
+.field span{font-size:13px;line-height:16px;color:#6E7681}
+.field input,.field textarea{font-size:17px;line-height:24px;width:100%;color:inherit;outline:0}
+.field textarea{resize:none}
+.field.is-error{border-bottom-color:var(--orange,#D75C32)}
+.ic-err{font-size:12px;line-height:16px;color:var(--orange,#D75C32)}
+.ic-thanks{display:flex;flex-direction:column;align-items:flex-start;gap:28px;padding:24px 0 8px}
+.ic-thanks h3{font-size:40px;line-height:44px;margin:0;padding:0}
+@keyframes ic-fade{from{opacity:0}to{opacity:1}}
+@keyframes ic-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:600px){.ic-modal{padding:0;align-items:flex-end}.ic-box{max-width:none;max-height:92dvh;padding:56px 20px 28px;border-radius:var(--r-modal,0) var(--r-modal,0) 0 0}.ic-pane h3{font-size:24px;line-height:28px}.ic-thanks h3{font-size:32px;line-height:36px}}
+@media(prefers-reduced-motion:reduce){.ic-ov,.ic-box{animation:none}}
+
+/* ---------- slider: finite, no autoplay ---------- */
+.ic-slider{--g:24px;--per:3;display:flex;flex-direction:column;gap:32px;min-width:0;width:100%}
+.ic-viewport{overflow:hidden;width:100%;touch-action:pan-y}
+.ic-track{display:flex!important;flex-wrap:nowrap!important;gap:var(--g)!important;align-items:stretch;transition:transform .55s var(--ic-ease)}
+.ic-track>*{flex:0 0 calc((100% - var(--g)*(var(--per) - 1))/var(--per))!important;min-width:0}
+.ic-controls{display:flex;align-items:center;justify-content:space-between;gap:32px;width:100%}
+.ic-prog{display:flex;align-items:center;gap:20px;flex:1;max-width:440px;font-size:13px;line-height:16px;letter-spacing:.08em;color:var(--muted,#6E7681);font-variant-numeric:tabular-nums}
+.ic-count{flex:none;min-width:92px}
+.ic-bar{position:relative;display:block;flex:1;height:1px;background:rgba(127,136,150,.4)}
+.ic-bar b{position:absolute;left:0;top:-1px;height:3px;width:30%;background:currentColor;transition:left .55s var(--ic-ease),width .55s var(--ic-ease)}
+.ic-btns{display:flex;gap:8px;flex:none}
+.ic-btns button{width:52px;height:52px;border:1px solid currentColor;background:transparent;color:inherit;border-radius:var(--r-btn,0);display:flex;align-items:center;justify-content:center;transition:background-color .2s ease,color .2s ease,opacity .2s ease}
+.ic-btns button:hover:not(:disabled){background:var(--ink,#0F1F38);color:var(--bg,#FEFEFE);border-color:var(--ink,#0F1F38)}
+.ic-btns button:disabled{opacity:.3;cursor:default}
+.ic-btns svg{width:22px;height:16px;transform:none!important}
+@media(max-width:900px){.ic-slider{--per:2}}
+@media(max-width:600px){.ic-slider{--per:1;--g:12px}.ic-track>*{flex-basis:86%!important}.ic-btns button{width:46px;height:46px}.ic-prog{gap:14px}.ic-count{min-width:70px}}
+@media(prefers-reduced-motion:reduce){.ic-track,.ic-bar b{transition:none}}
+
+/* ---------- secondary links: quiet at rest, underline draws on hover; arrows never move ---------- */
+.lnk{position:relative;display:inline-block;cursor:pointer;padding-bottom:6px;border-bottom:1px solid color-mix(in srgb,currentColor 38%,transparent);transition:color .25s ease;text-align:left}
+.lnk::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--orange,#D75C32);transform:scaleX(0);transform-origin:left center;transition:transform .35s var(--ic-ease)}
+.lnk:hover::after,.lnk:focus-visible::after{transform:scaleX(1)}
+a:hover svg,button:hover svg,.btn:hover svg{transform:none!important}
+@media(prefers-reduced-motion:reduce){.lnk::after{transition:none}}
+
+/* ---------- concept 1: triangles unfold once ---------- */
+html.ic-tri-motion .tri{transform:scale(0);transition:transform .8s var(--ic-ease)}
+html.ic-tri-motion .tri.is-in{transform:scale(1)}

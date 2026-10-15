@@ -1,0 +1,98 @@
+/* V3 — INEOS-style colour bands, rounded. Device replacing INEOS stripes: round numbered badge; bands are stacked sheets with rounded top corners. */
+:root{--t-blue:#E6EBF5;--t-peach:#FCEAE2;--t-sky:#E0EEF6;--t-mint:#DDF1E8;
+--a-blue:#1D3B7B;--a-peach:#D75C32;--a-sky:#1C6496;--a-mint:#1F7A5C;--sheet-r:40px}
+html{background:#0F1F38;overscroll-behavior-y:none}
+body{background:#FEFEFE}
+main{background:#FEFEFE;overflow:visible}
+#about{--tint:var(--t-blue);--acc:var(--a-blue)}
+#certs{--tint:#FEFEFE;--acc:var(--a-blue)}
+#custom{--tint:var(--t-peach);--acc:var(--a-peach)}
+#apps{--tint:var(--t-sky);--acc:var(--a-sky)}
+#tech{--tint:#1D3B7B;--acc:#FEFEFE}
+#series{--tint:var(--t-peach);--acc:var(--a-peach)}
+#nature{--tint:var(--t-mint);--acc:var(--a-mint)}
+#contact{--tint:var(--t-sky);--acc:var(--a-sky)}
+/* bands: full bleed, stacked */
+main>.section{max-width:none;margin:0;background:var(--tint)!important;padding-left:var(--pad)!important;padding-right:var(--pad)!important;border-radius:var(--sheet-r) var(--sheet-r) 0 0;margin-top:calc(var(--sheet-r) * -1);padding-top:calc(72px + var(--sheet-r));padding-bottom:72px;position:relative}
+main>#about{margin-top:0;padding-top:72px;border-radius:0}
+main>#certs{padding-top:calc(44px + var(--sheet-r));padding-bottom:48px;border-radius:var(--sheet-r) var(--sheet-r) 0 0}
+main>#contact{padding-bottom:calc(72px + var(--sheet-r))}
+main>.section>*{max-width:1824px;margin-left:auto;margin-right:auto}
+/* badge */
+.section .eyebrow{color:var(--acc);align-items:center;gap:12px}
+.section .eyebrow .dash{display:none}
+.section .eyebrow .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#FEFEFE;font-size:13px;letter-spacing:0}
+#tech .eyebrow{color:#FEFEFE}#tech .eyebrow .n{background:#FEFEFE;color:#1D3B7B}
+/* headings: smaller */
+.hero-heading h1,#hero h1{font-size:clamp(40px,4.4vw,64px)!important;line-height:1.04!important}
+.section h2,.section-intro h2{font-size:clamp(26px,2.5vw,36px)!important;line-height:1.1!important}
+.nature-head h2{font-size:clamp(30px,3.2vw,46px)!important}
+@media(max-width:600px){#hero h1,.hero-heading h1{font-size:40px!important;line-height:42px!important}}
+/* white cards on bands */
+.custom-panel,.contact-panel{background:#FEFEFE!important}
+#custom .custom-panel{border-radius:24px}
+.application,.srow{background:#FEFEFE}
+.application{border-radius:20px;padding:0 0 20px;overflow:hidden}
+.application h3,.application p{padding:0 20px}
+.srow{border-radius:16px;margin-bottom:8px;padding-left:24px;padding-right:24px;border:0}
+.srows{border:0}
+/* ABOUT */
+@media(min-width:901px){
+#about .about-body{flex-direction:row;align-items:flex-start;justify-content:space-between;gap:56px}
+#about .about-copy{flex:1;max-width:560px}
+#about .company-visual{flex:0 0 36%;width:36%;height:auto!important;min-height:0!important;aspect-ratio:1600/1353;margin-left:auto}
+#about .company-visual img{width:100%;height:100%;object-fit:cover}
+}
+/* CERTS: compact row */
+#certs .cert-top{align-items:center;gap:48px}
+#certs .cert-logos{gap:12px;justify-content:flex-end;flex:1}
+#certs .cert-logos img{box-sizing:border-box;width:auto;max-width:none;flex:1 1 0;min-width:0;max-width:150px;height:72px;padding:14px 16px;background:#F2F4F7;border-radius:16px;object-fit:contain}
+#certs .cert-logos img:nth-child(n){width:auto;height:72px}
+#certs .cert-logos img:nth-child(4),#certs .cert-logos img:nth-child(5){padding:10px}
+#certs .document-links{margin-top:20px}
+@media(max-width:900px){#certs .cert-logos{justify-content:flex-start;flex-wrap:wrap}#certs .cert-logos img{flex:0 0 calc((100% - 24px)/3);max-width:none}}
+/* CUSTOM / TECH images: natural proportions */
+@media(min-width:901px){
+#custom .custom-photos{width:30%;flex:none}
+#custom .custom-photos>.photo{flex:none;min-height:0;aspect-ratio:3/2}
+#custom .custom-panel{align-items:flex-start}
+#tech .tech-body{align-items:flex-start;gap:56px}
+#tech .tech-photo{width:38%;min-height:0!important;height:auto!important;aspect-ratio:1400/1012;background-position:center}
+}
+/* TECH on deep blue */
+#tech,#tech h2,#tech h3,#tech p,#tech summary,#tech .process-step,#tech .process-step *{color:#FEFEFE}
+#tech .section-intro p{color:rgba(254,254,254,.8)}
+#tech .process-step{border-color:rgba(254,254,254,.3)}
+#tech .pill,#tech .process-step .pill{border-color:rgba(254,254,254,.45);color:#FEFEFE;background:transparent}
+#tech .btn.outline{border-color:rgba(254,254,254,.7);color:#FEFEFE}
+#tech .btn.outline:hover{background:#FEFEFE;color:#1D3B7B}
+#tech .btn.outline:hover svg{color:#1D3B7B}
+/* item 7: disabled arrow keeps its direction on hover */
+.banner-controls .banner-prev svg,.banner-controls .banner-prev:hover svg,.banner-controls .banner-prev:disabled:hover svg{transform:rotate(180deg)!important}
+.banner-controls .banner-next svg,.banner-controls .banner-next:hover svg{transform:none!important}
+.banner-controls button:disabled:hover{background:#DADDE1;color:#8A9299}
+/* item 8: no underline under rounded buttons on hover */
+.btn,.btn:hover,.btn:focus-visible,.text-link.btn,.text-link.btn:hover,.btn.outline:hover{text-decoration:none!important;border-bottom-color:transparent!important;box-shadow:none}
+.btn.outline,.text-link.btn.outline{border-bottom:1px solid rgba(15,31,56,.35)}
+.btn.outline:hover,.text-link.btn.outline:hover{border-bottom:1px solid var(--blue)}
+.text-link.btn:before,.text-link.btn:after,.btn:after{content:none!important}
+/* item 9: orange submit round, checkbox round with a dot instead of a tick (page form and popup) */
+.btn.orange,.contact-form .btn.orange,.ic-pane .btn.orange{border-radius:999px!important}
+.consent input[type=checkbox],.ic-pane .consent input[type=checkbox]{border-radius:50%!important;background-color:#FEFEFE!important;border:1px solid #6E7681!important;background-image:none!important}
+.consent input[type=checkbox]:checked,.ic-pane .consent input[type=checkbox]:checked{background-color:#FEFEFE!important;border-color:var(--ic-blue,#1D3B7B)!important;background-image:radial-gradient(circle,#1D3B7B 0 4.5px,transparent 5.2px)!important;background-size:100% 100%!important}
+/* item 10: popup form rounded, rounded close button */
+.ic-box{border-radius:28px!important}
+.ic-x{border-radius:50%!important;border:1px solid rgba(15,31,56,.25)!important;background:#FEFEFE!important;transition:background-color .18s ease,color .18s ease}
+.ic-x:hover{background:#0F1F38!important;color:#FEFEFE!important;border-color:#0F1F38!important}
+.ic-pane .field input,.ic-pane .field textarea{border-radius:0}
+/* footer: navy, tonal wordmark */
+#footer{background:#0F1F38;color:#FEFEFE;border-radius:var(--sheet-r) var(--sheet-r) 0 0;margin-top:calc(var(--sheet-r) * -1);padding-top:calc(48px + var(--sheet-r));position:relative}
+#footer .footer-description span,#footer .footer-col span{color:rgba(254,254,254,.6)}
+#footer .footer-description p,#footer .footer-col a,#footer a{color:#FEFEFE}
+#footer .footer-bottom,#footer .footer-bottom *{color:rgba(254,254,254,.72)}
+#footer .footer-bottom{border-top-color:rgba(254,254,254,.2)}
+#footer .footer-wordmark img{opacity:1}
+.srows{background:transparent!important;padding:0!important;border:0!important;box-shadow:none!important}
+#nature .nature-head .eyebrow{color:#FEFEFE}
+#nature .nature-head .eyebrow .n{background:#FEFEFE;color:#1F7A5C}
+@media(max-width:900px){#tech .tech-photo{aspect-ratio:1400/1012!important;height:auto!important;min-height:0!important}}

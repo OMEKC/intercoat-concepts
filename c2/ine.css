@@ -1,0 +1,122 @@
+/* V2 — INEOS-style colour bands. Device replacing INEOS stripes: accent corner triangle hanging from the top-left of each band. */
+:root{--t-blue:#E6EBF5;--t-peach:#FCEAE2;--t-sky:#E0EEF6;--t-mint:#DDF1E8;
+--a-blue:#1D3B7B;--a-peach:#D75C32;--a-sky:#1C6496;--a-mint:#1F7A5C;--edge:max(0px,calc((100vw - 1760px)/2))}
+html{background:#0F1F38;overscroll-behavior-y:none}
+body{background:#FEFEFE}
+#news{--tint:var(--t-blue);--acc:var(--a-blue)}
+#about{--tint:var(--t-peach);--acc:var(--a-peach)}
+#certs{--tint:#FEFEFE;--acc:var(--a-blue)}
+#custom{--tint:var(--t-sky);--acc:var(--a-sky)}
+#apps{--tint:var(--t-peach);--acc:var(--a-peach)}
+#tech{--tint:#1D3B7B;--acc:#FEFEFE}
+#series{--tint:var(--t-blue);--acc:var(--a-blue)}
+#nature{--tint:var(--t-mint);--acc:var(--a-mint)}
+#contact{--tint:var(--t-sky);--acc:var(--a-sky)}
+#news,.sec,#contact{background:var(--tint);position:relative;--line:rgba(15,31,56,.16)}
+#news{padding-bottom:clamp(40px,4vw,64px)}
+.sec{padding-top:clamp(64px,6vw,96px);padding-bottom:clamp(48px,5vw,80px)}
+.sec .rule,.sec .rule.g12{border-top:0;padding-top:0}
+#news:before,.sec:before,#contact:before{content:"";position:absolute;top:0;left:calc(var(--edge) + var(--pad));width:44px;height:44px;background:var(--acc);clip-path:polygon(0 0,100% 0,0 100%)}
+#contact{margin-top:0;padding:clamp(64px,6vw,96px) 0 clamp(48px,5vw,80px)}
+#news .intro{padding-top:clamp(56px,5vw,84px)}
+/* headings: smaller */
+.intro h1{font-size:clamp(34px,3.8vw,56px);line-height:1.05}
+h2,.news-head h2{font-size:clamp(26px,2.5vw,38px);line-height:1.1}
+.nt h2{font-size:clamp(34px,3.6vw,52px);line-height:1.05;margin:0 0 24px;letter-spacing:-.03em}
+.rq .item h3{font-size:clamp(20px,1.7vw,26px)}
+.st li h3{font-size:clamp(19px,1.6vw,24px)}
+.se .r b{font-size:clamp(26px,2.3vw,36px)}
+.ft-top .tag{font-size:clamp(24px,2.6vw,38px)}
+/* NEWS: three white cards, natural 16:9 */
+.ncard{flex:0 0 calc((100% - 32px)/3);background:#FEFEFE}
+.track{gap:16px}
+.ncard .ph{aspect-ratio:16/9}
+.ncard .tx{grid-template-columns:1fr;padding:20px 22px 24px;gap:10px}
+.ncard p{min-height:0}
+.ncard .pill-btn{grid-column:1;margin-top:6px}
+.nav-btn{top:calc((100% - 32px)/3*9/32 - 26px)}
+.nav-btn.prev{left:8px}.nav-btn.next{right:8px}
+/* ABOUT: small photo, natural ratio */
+.co h2{grid-column:1/6}.co .copy{grid-column:6/10}
+.co .vis{grid-column:10/13;aspect-ratio:1600/1353}
+.co .vis img{position:static;height:100%}
+/* CERTS: compact one row */
+#certs.sec{padding-top:clamp(56px,5vw,72px);padding-bottom:clamp(32px,3vw,48px)}
+.cq .rule{row-gap:20px;align-items:center}
+.cq .head{grid-column:1/5}
+.cq .head p{margin-top:12px;font-size:14px;line-height:1.5}
+.cq .marks{grid-column:5/13;border-left:0}
+.cq .mark{min-height:0;height:80px;padding:0 14px;justify-content:center;align-items:center;border-right:0;border-left:1px solid var(--line)}
+.cq .mark span{display:none}
+.cq .mark img{height:44px;object-position:center}
+.cq .docs{grid-column:1/13;margin-top:0;grid-template-columns:1fr 1fr}
+.cq .docs a{padding:14px 0;font-size:16px}
+/* STEPS / REQUIREMENTS / SERIES as white cards */
+.st ol{display:grid;gap:12px}
+.st li,.st li:first-child{background:#FEFEFE;padding:20px 24px;border:0;grid-template-columns:40px minmax(0,1fr)}
+.st li i{padding-top:5px}
+.rq .sub{margin-bottom:24px}
+.rq .items{display:grid;gap:12px}
+.rq .item{background:#FEFEFE;padding:20px 24px;border:0;align-items:center}
+.rq .item .tx{grid-column:5/10}
+.rq .item .ph{grid-column:10/13;aspect-ratio:16/9}
+.se .list{display:grid;gap:8px}
+.se .r,.se .r:last-child{background:#FEFEFE;padding:14px 24px;border:0}
+.se .more{margin-top:18px}
+/* TECH: deep blue band, factory photo uncropped */
+.au{color:#FEFEFE}
+.au h2,.au .lead,.au p,.au li,.au .body{color:#FEFEFE}
+.au .two h3{color:rgba(254,254,254,.72)}
+.au .two li{border-color:rgba(254,254,254,.3)}
+.au .pill-btn{border-color:rgba(254,254,254,.7);color:#FEFEFE}
+.au .pill-btn:hover{background:#FEFEFE;color:#1D3B7B;border-color:#FEFEFE}
+.au .rule{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
+.au .wide{grid-column:1/5;aspect-ratio:1400/1012;margin:0}
+.au .g12{grid-column:5/13;display:block}
+.au h2{margin-bottom:22px}
+.au .body{margin:0}
+/* NATURE: photo + statement card left */
+.nt .rule{align-items:start}
+.nleft{grid-column:1/5;display:flex;flex-direction:column;gap:12px}
+.nleft .ph{align-self:auto;min-height:0;aspect-ratio:3/2}
+.ncard2{background:#FEFEFE;padding:22px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.ncard2 .note{margin:0;font-size:clamp(17px,1.4vw,21px)}
+.nt .copy{grid-column:6/13;display:block;padding-right:0}
+.nt .copy .bottom{margin-top:32px}
+/* CONTACT: white form card */
+.contact-form{background:#FEFEFE;padding:32px}
+#contact .l{justify-content:flex-start}
+#contact .l .contact-details{margin-top:auto}
+/* buttons: no underline/hover decoration */
+.pill-btn,.pill-btn:hover,.btn.orange:hover{text-decoration:none;border-bottom:0}
+/* FOOTER: navy */
+#footer{background:#0F1F38;color:#FEFEFE;padding:clamp(48px,5vw,72px) 0 24px;position:relative}
+#footer .rule{border-top:0;padding-top:0}
+#footer:before{content:"";position:absolute;top:0;left:calc(var(--edge) + var(--pad));width:44px;height:44px;background:#D75C32;clip-path:polygon(0 0,100% 0,0 100%)}
+.ft-top .tag{opacity:1;color:rgba(254,254,254,.82)}
+.ft-top .col>span{color:rgba(254,254,254,.6)}
+.ft-top .col a:hover{color:#fff;opacity:.8}
+.ft-bot{border-top-color:rgba(254,254,254,.2);color:rgba(254,254,254,.7)}
+.ft-bot a:hover,.ft-bot .cookie-settings:hover{color:#fff}
+@media(max-width:1100px){
+.co .copy{grid-column:1/7}.co .vis{grid-column:7/13}
+.cq .head{grid-column:1/13}.cq .marks{grid-column:1/13}
+.rq .item .tx{grid-column:1/7}.rq .item .ph{grid-column:7/13}
+.au .wide{grid-column:1/13;max-width:520px;margin-bottom:24px}.au .g12{grid-column:1/13}
+.nleft{grid-column:1/13;max-width:520px}.nt .copy{grid-column:1/13;margin-top:28px}
+.ncard{flex-basis:calc((100% - 16px)/2)}
+}
+@media(max-width:700px){
+.ncard{flex-basis:88%}
+.co .copy,.co .vis{grid-column:1/13}.co .vis{max-width:420px}
+.cq .docs{grid-template-columns:1fr}
+.cq .marks{grid-template-columns:repeat(2,1fr)}
+.rq .item{padding:18px 18px 22px}
+.rq .item .tx{grid-column:1/13;margin-top:12px}
+.nav-btn{top:calc(((100% - 16px)*.88)*9/32 - 22px)}
+.cq .mark{height:72px}
+.rq .item .ph{grid-column:1/13}
+.contact-form{padding:24px 20px}
+}
+.au .two p{color:#FEFEFE}
+.st-photo{display:block;width:100%;max-width:520px;height:auto;aspect-ratio:1400/398;margin-top:32px}

@@ -1,0 +1,103 @@
+/* V1 — INEOS-style colour bands. Device replacing INEOS stripes: square swatch tile with section number.
+   Palette: pastel band + one accent per section; white cards sit on the band. */
+:root{--t-blue:#E6EBF5;--t-peach:#FCEAE2;--t-sky:#E0EEF6;--t-mint:#DDF1E8;
+--a-blue:#1D3B7B;--a-peach:#D75C32;--a-sky:#1C6496;--a-mint:#1F7A5C;--text-h2:40px;--section-space:80px}
+html{background:#0F1F38;overscroll-behavior-y:none}
+.section{background:var(--tint,#FEFEFE)}
+#news{--tint:var(--t-blue);--acc:var(--a-blue)}
+#about{--tint:var(--t-peach);--acc:var(--a-peach)}
+#certs{--tint:#FEFEFE;--acc:var(--a-blue)}
+#custom{--tint:var(--t-sky);--acc:var(--a-sky)}
+#apps{--tint:var(--t-peach);--acc:var(--a-peach)}
+#tech{--tint:#1D3B7B;--acc:#FEFEFE}
+#series{--tint:var(--t-blue);--acc:var(--a-blue)}
+#nature{--tint:var(--t-mint);--acc:var(--a-mint)}
+#contact{--tint:var(--t-sky);--acc:var(--a-sky)}
+/* swatch tile */
+.section .section-label{color:var(--acc);gap:12px;align-items:center;font-size:13px;letter-spacing:.06em}
+.section .section-label:before{display:none!important}
+.section .section-n{display:grid;place-items:center;width:36px;height:36px;background:var(--acc);color:#FEFEFE;font-size:13px;letter-spacing:.02em;flex:none}
+#tech .section-n{background:#FEFEFE;color:#1D3B7B}
+#tech .section-label{color:#FEFEFE}
+h2,.section-heading h2,.about-heading h2,.custom-copy h2,.nature-copy h2{font-size:clamp(28px,2.8vw,40px)!important;line-height:1.1!important;letter-spacing:-.02em}
+.nature-copy h2{font-size:clamp(30px,3.4vw,48px)!important}
+.contact-copy h2{font-size:clamp(28px,2.6vw,36px)!important;line-height:1.12!important}
+.hero-copy h1{font-size:clamp(44px,4.9vw,72px)!important;line-height:1.02!important}
+@media(max-width:600px){.hero-copy h1{font-size:44px!important;line-height:46px!important}}
+.section{padding-top:72px;padding-bottom:72px}
+.section-heading{margin-bottom:36px}
+/* cards */
+.news-card,.application,.series-item,.stage,.visit-note{background:#FEFEFE}
+.news-card{border:0}
+.application{border:0}
+.series-grid{gap:12px;border:0;background:none}
+.series-item{border:0}
+.series-enquiry{background:#1D3B7B;color:#FEFEFE}
+.custom-stages{gap:12px}
+.stage{padding:20px;border:0;border-top:0}
+.stage:before,.stage:after{display:none}
+.nature-panel{background:#FEFEFE;border:0}
+.contact-panel{background:#FEFEFE}
+.contact-form input,.contact-form textarea,.contact-form select{background:#fff}
+/* ABOUT: small photo, wide text */
+.presence{align-items:flex-start;gap:48px}
+#about .company-visual{flex:0 0 36%!important;width:36%;max-width:none;min-height:0!important;max-height:none!important;height:auto!important;background:none}
+#about .company-visual img{position:static;display:block;width:100%;height:auto;aspect-ratio:1600/1353;object-fit:cover}
+.company-side{flex:1}
+/* CERTS: compact */
+#certs{padding-top:48px;padding-bottom:48px;border-top:1px solid #DADDE1;border-bottom:1px solid #DADDE1}
+#certs{display:grid;grid-template-columns:minmax(260px,30%) 1fr;column-gap:56px;row-gap:24px;align-items:center}
+#certs>.section-heading{grid-column:1;grid-row:1;margin:0;flex-direction:column;align-items:flex-start;gap:14px}
+#certs>.section-heading>.col{gap:14px}
+#certs>.section-heading h2{font-size:clamp(26px,2.4vw,34px)!important}
+#certs>.section-heading>p{max-width:none;padding:0;font-size:14px;line-height:21px;margin:0}
+#certs .quality-marks{grid-column:2;grid-row:1;display:flex;flex-wrap:nowrap;margin:0;border:0;gap:12px;justify-content:flex-end}
+#certs .quality-mark{flex:1 1 0;min-width:0;height:96px;padding:10px 12px;border:0;background:transparent;border-left:1px solid #DADDE1;display:flex;align-items:center;justify-content:center}
+#certs .quality-mark>span,#certs .quality-mark>p{display:none}
+#certs .quality-mark img{width:auto;max-width:100%;height:56px;object-fit:contain}
+#certs .quality-mark img[alt^=ISO]{height:64px;width:64px}
+#certs .quality-bottom{grid-column:1/-1;margin:0}
+#certs .document-links{flex-direction:row;gap:24px;width:100%}
+#certs .document-link{flex:1;min-height:56px;border-top:1px solid #DADDE1;border-bottom:0}
+/* CUSTOM: small images, natural ratio */
+.custom-layout{gap:56px;align-items:flex-start}
+.custom-images{flex:0 0 30%;width:30%;gap:12px}
+.custom-images>.photo{width:100%;min-height:0;height:auto;flex:none;background-size:cover}
+.custom-images>.photo:nth-child(1){aspect-ratio:1400/398}
+.custom-images>.photo:nth-child(2){aspect-ratio:3/2}
+/* APPS: smaller photo inside card */
+.application>.photo{width:40%}
+/* TECH: factory photo uncropped */
+.tech-visual{flex:0 0 38%;width:38%}
+.tech-photo{height:auto!important;min-height:0!important;aspect-ratio:1400/1012;background-size:cover}
+.tech-layout{gap:56px;align-items:flex-start}
+.tech-process{flex:1}
+/* SERIES: narrow natural image */
+.series-image{flex:0 0 20%!important;width:20%!important;min-height:0!important;height:auto!important;aspect-ratio:2/3;align-self:flex-start}
+/* NATURE: ~1/3 width natural */
+.nature-layout{gap:56px;align-items:flex-start}
+.nature-image{align-self:flex-start!important;flex:0 0 34%!important;width:34%!important;min-height:0!important;height:auto!important;aspect-ratio:3/2}
+/* HERO image smaller */
+@media(min-width:901px){.hero-visual{height:clamp(300px,26vw,400px)}}
+/* buttons: no hover underline */
+.btn,.btn:hover,.btn:focus-visible{text-decoration:none!important;border-bottom-color:transparent}
+.btn.outline:hover,.btn:hover{background-image:none}
+/* footer */
+#footer{margin-bottom:0}
+body{background:#0F1F38}main{background:#FEFEFE}
+@media(max-width:900px){
+#certs{display:block;padding-top:40px;padding-bottom:40px}
+#certs .quality-marks{flex-wrap:wrap;margin:24px 0}
+#certs .quality-mark{flex:1 1 30%}
+#certs .document-links{flex-direction:column;gap:0}
+.presence,.custom-layout,.tech-layout,.nature-layout,.series-layout{flex-direction:column}
+.company-visual,#about .company-visual,.custom-images,.tech-visual,.nature-image,.series-image{width:100%!important;flex:none!important;max-width:520px}
+.series-image{max-width:260px}
+.custom-images{flex-direction:row}
+.custom-images>.photo{flex:1}
+}
+.nature-left{flex:0 0 34%;width:34%;gap:12px;display:flex;flex-direction:column}
+.nature-left .nature-image{flex:none!important;width:100%!important}
+.nature-left .nature-panel{margin:0;padding:24px}
+@media(max-width:900px){.nature-left{width:100%;flex:none}}
+@media(max-width:600px){.application>.photo{width:100%!important;height:220px!important;flex:none}.section{padding-top:56px;padding-bottom:56px}}

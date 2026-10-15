@@ -101,3 +101,5 @@ body{background:#0F1F38}main{background:#FEFEFE}
 .nature-left .nature-panel{margin:0;padding:24px}
 @media(max-width:900px){.nature-left{width:100%;flex:none}}
 @media(max-width:600px){.application>.photo{width:100%!important;height:220px!important;flex:none}.section{padding-top:56px;padding-bottom:56px}}
+#series .section-heading .text-link{order:3;margin-left:24px;white-space:nowrap}#series .section-heading>p{order:2;margin-left:auto}
+@media(max-width:900px){#series .section-heading .text-link{margin-left:0}#series .section-heading>p{margin-left:0}}

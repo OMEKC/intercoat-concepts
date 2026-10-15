@@ -129,7 +129,7 @@ h2{font-size:clamp(32px,2.9vw,52px);line-height:1.08;letter-spacing:-.01em}
 .live-phone .scr>.vp{flex:1;min-height:0;position:relative;overflow:hidden;background:#fff}
 .live-phone iframe{position:absolute;left:0;top:0;width:390px;border:0;transform-origin:0 0;background:#fff}
 .foot{background:var(--bg);padding:48px 0 40px}
-.foot .in{padding:0 36px;max-width:1080px}
+.foot .in{padding:0 var(--pad)}
 .foot-row{display:flex;justify-content:space-between;align-items:center}
 .wm{font-size:44px;color:var(--blue);letter-spacing:-.02em;line-height:1}
 .up{display:inline-flex;align-items:center;gap:36px;background:var(--blue);color:#fff;font-size:13px;padding:14px 12px 14px 12px;transition:background .15s}

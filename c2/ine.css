@@ -120,3 +120,127 @@ h2,.news-head h2{font-size:clamp(26px,2.5vw,38px);line-height:1.1}
 }
 .au .two p{color:#FEFEFE}
 .st-photo{display:block;width:100%;max-width:520px;height:auto;aspect-ratio:1400/398;margin-top:32px}
+
+/* ===== FIGMA SYNC (round 27): spacing and logo cells as in the edited mockups ===== */
+.pill-btn,.language-trigger,.language-search,.language-option,.btn.orange{border-radius:0}
+@media(min-width:901px){
+.cq .head p{margin-top:24px}
+.cq .rule{row-gap:7px}
+.cq .marks{display:grid;grid-template-columns:235fr 235fr 235fr 100fr 100fr}
+.cq .mark{padding:0 8px}
+.cq .mark img{height:auto;max-height:56px;width:min(var(--lw,100px),86%)}
+.cq .mark img[alt^=CATAS]{--lw:98px}
+.cq .mark img[alt^=QUALI]{--lw:180px}
+.cq .mark img[alt^="T"]{--lw:180px}
+.cq .mark img[alt^=ISO]{--lw:41px;height:auto}
+.st-photo{aspect-ratio:2/1;object-fit:cover;object-position:42% 50%}
+.rq .sub{position:relative;top:12px}
+.au h2{margin-bottom:43px}
+.au .copy p+p{margin-top:23px}
+.au .two{margin-top:28px}
+.au .two h3{margin-bottom:24px}
+.nt h2{margin-bottom:49px}
+.nt .paras p+p{max-width:490px;margin-top:28px}
+.nt .copy .bottom{margin-top:65px}
+.nt .streams h3{margin-bottom:13px}
+.nt .streams p{line-height:28px;max-width:600px}
+.nt .streams p span+span::before{margin:0 16px}
+.ft-bot{margin-top:clamp(56px,10vw,160px)}
+}
+@media(min-width:901px){#tech.sec{padding-bottom:38px}}
+@media(min-width:901px){
+.st .head h2{max-width:480px}
+.se .head p{max-width:440px;margin-top:37px}
+.nt .streams p{max-width:640px}
+#nature .streams p span{display:inline-block}
+}
+@media(min-width:901px){
+#contact .l p{max-width:520px}
+.ft-top .tag{max-width:15em}
+.form-caption{margin-top:2px}
+.contact-form{padding-bottom:22px}
+.contact-form textarea{resize:none}
+}
+@media(min-width:901px){.cookie-settings .m-only{display:none}}
+/* MOBILE (round 27) */
+@media(max-width:900px){
+.intro p{margin-top:42px}
+.news-head{margin-bottom:14px}
+.co h2{grid-column:1/13}
+.co .copy{margin-top:40px}
+.co .vis{margin-top:40px}
+#about.sec{padding-bottom:66px}
+}
+@media(max-width:900px){
+.cq .head h2{margin-top:3px}
+.cq .head p{margin-top:17px;font-size:13.4px;line-height:21px}
+.cq .marks{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:67px 35px;margin:35px 0 44px;border:0}
+#certs.sec{padding-bottom:42px}
+.cq .mark{flex:0 0 100%;height:auto;padding:0;border:0;justify-content:center}
+.cq .mark img{height:auto;max-height:none}
+.cq .mark img[alt^=CATAS]{width:128px}
+.cq .mark img[alt^=QUALI]{width:234px}
+.cq .mark img[alt^="T"]{width:214px}
+.cq .mark:has(img[alt^=ISO]){flex:0 0 auto}
+.cq .mark img[alt^=ISO]{width:62px;height:62px}
+}
+@media(max-width:900px){
+.st .head,.st ol{grid-column:1/13}
+.st .head h2{max-width:none}
+.st .head p{margin-top:28px}
+.st .head .pill-btn{margin-top:18px}
+.st-photo{aspect-ratio:320/190;max-width:none;object-fit:cover;object-position:35% 50%;margin-top:25px}
+}
+@media(max-width:900px){
+.au .wide{margin-bottom:48px}
+.au h2{margin-bottom:43px}
+.au .copy p+p{margin-top:23px}
+.au .two{margin-top:55px}
+.au .two h3{margin-bottom:12px}
+.au .two>div:first-child h3{margin-bottom:21px}
+.au .two>div+div{margin-top:0}
+.au .two .pill-btn{margin-top:-2px}
+#tech.sec{padding-bottom:48px}
+.au .two li:last-child{border-bottom:1px solid rgba(254,254,254,.3)}
+}
+@media(max-width:900px){
+.se .head p{margin-top:37px}
+.se .list{margin-top:8px}
+.se .r{grid-template-columns:57px minmax(0,1fr) 22px;column-gap:10px}
+#series.sec{padding-bottom:20px}
+.se .r:not(:first-child){padding-top:26px;padding-bottom:26px}
+.se .r:not(:last-child){margin-bottom:1px}
+}
+@media(max-width:900px){
+.nt .copy{margin-top:56px}
+.nt h2{margin-bottom:48px}
+.nt .paras p+p{margin-top:21px}
+#nature.sec{padding-bottom:73px}
+.nt .streams p{max-width:250px;line-height:21px}
+.nt .streams p span+span::before{margin:0 12px}
+}
+@media(max-width:900px){
+#contact .l p{margin-top:22px}
+#contact .l .contact-details{padding-top:1px}
+.ft-bot{margin-top:95px}
+.contact-form{margin-top:69px}
+.contact-form textarea{resize:none}
+}
+
+/* contact popup: single column of fields, as in the mockups */
+.ic-box .form-row{display:contents}
+.ic-box .form-row>.field{flex:none;width:auto;min-width:0}
+@media(min-width:601px){
+.ic-pane .contact-form,.ic-pane .form{gap:26px}
+.ic-box{padding-bottom:33px}
+.ic-pane .field:has(textarea){margin-top:-3px;min-height:0}
+.ic-pane textarea{margin-bottom:-2px}
+}
+
+@media(min-width:601px){
+.language-options{max-height:none;row-gap:0}
+.language-panel{padding-bottom:16px}
+.language-option{min-height:44px;height:44px;padding-top:0;padding-bottom:0}
+}
+.ic-thanks{padding-bottom:29px}
+.ic-thanks .ic-done{margin-top:-6px}

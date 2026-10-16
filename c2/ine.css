@@ -1,6 +1,6 @@
 /* V2 — INEOS-style colour bands. Device replacing INEOS stripes: accent corner triangle hanging from the top-left of each band. */
-:root{--t-blue:#E6EBF5;--t-peach:#FCEAE2;--t-sky:#E0EEF6;--t-mint:#DDF1E8;
---a-blue:#1D3B7B;--a-peach:#D75C32;--a-sky:#1C6496;--a-mint:#1F7A5C;--edge:max(0px,calc((100vw - 1760px)/2))}
+:root{--t-blue:#E4EDF5;--t-peach:#FCEAE2;--t-sky:#E0EEF6;--t-mint:#DDF1E8;
+--a-blue:#1E6190;--a-peach:#D75C32;--a-sky:#1E6190;--a-mint:#1F7A5C;--edge:max(0px,calc((100vw - 1760px)/2))}
 html{background:#0F1F38;overscroll-behavior-y:none}
 body{background:#FEFEFE}
 #news{--tint:var(--t-blue);--acc:var(--a-blue)}
@@ -8,7 +8,7 @@ body{background:#FEFEFE}
 #certs{--tint:#FEFEFE;--acc:var(--a-blue)}
 #custom{--tint:var(--t-sky);--acc:var(--a-sky)}
 #apps{--tint:var(--t-peach);--acc:var(--a-peach)}
-#tech{--tint:#1D3B7B;--acc:#FEFEFE}
+#tech{--tint:#1E6190;--acc:#FEFEFE}
 #series{--tint:var(--t-blue);--acc:var(--a-blue)}
 #nature{--tint:var(--t-mint);--acc:var(--a-mint)}
 #contact{--tint:var(--t-sky);--acc:var(--a-sky)}
@@ -69,7 +69,7 @@ h2,.news-head h2{font-size:clamp(26px,2.5vw,38px);line-height:1.1}
 .au .two h3{color:rgba(254,254,254,.72)}
 .au .two li{border-color:rgba(254,254,254,.3)}
 .au .pill-btn{border-color:rgba(254,254,254,.7);color:#FEFEFE}
-.au .pill-btn:hover{background:#FEFEFE;color:#1D3B7B;border-color:#FEFEFE}
+.au .pill-btn:hover{background:#FEFEFE;color:#1E6190;border-color:#FEFEFE}
 .au .rule{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;align-items:start}
 .au .wide{grid-column:1/5;aspect-ratio:1400/1012;margin:0}
 .au .g12{grid-column:5/13;display:block}
@@ -245,3 +245,8 @@ h2,.news-head h2{font-size:clamp(26px,2.5vw,38px);line-height:1.1}
 }
 .ic-thanks{padding-bottom:29px}
 .ic-thanks .ic-done{margin-top:-6px}
+/* round 29: footer in the brand blue #1E6190, minimal empty space */
+#footer{background:#1E6190;padding-bottom:20px}
+.ft-bot{margin-top:clamp(32px,3.4vw,48px)}
+@media(max-width:900px){.ft-bot{margin-top:32px}}
+#footer{padding-top:clamp(40px,3.6vw,52px)}

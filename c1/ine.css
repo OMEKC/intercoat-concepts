@@ -218,3 +218,7 @@ body{background:#0F1F38}main{background:#FEFEFE}
 .language-panel{padding-bottom:16px}
 .language-option{min-height:44px;height:44px;padding-top:0;padding-bottom:0}
 }
+/* round 29: tighter footer */
+#footer{padding-top:44px;padding-bottom:20px}
+#footer .footer-bottom{padding-top:18px}
+@media(max-width:900px){#footer .footer-bottom{margin-top:36px}}

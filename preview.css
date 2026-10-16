@@ -42,7 +42,7 @@
 .phone .rl{width:calc(16*var(--u));height:calc(16*var(--u));color:#1b1d22;margin-left:calc(8*var(--u))}
 .phone .home{position:absolute;left:50%;bottom:calc(8*var(--u));width:calc(138*var(--u));height:calc(5*var(--u));margin-left:calc(-69*var(--u));border-radius:calc(3*var(--u));background:#111317}@font-face{font-family:"Aeonik Pro";src:url(fonts/aeonikpro-regular.otf) format("opentype");font-weight:400;font-style:normal;font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0;font-synthesis:none}
-:root{--blue:#1C6496;--navy:#0F1F38;--g:#6E7681;--line:#E4E6E5;--bg:#F8F9F4;--bg2:#F0F1EC;--pad:clamp(20px,4.45vw,96px)}
+:root{--blue:#1E6190;--navy:#0F1F38;--g:#6E7681;--line:#E4E6E5;--bg:#F8F9F4;--bg2:#F0F1EC;--pad:clamp(20px,4.45vw,96px)}
 html{background:#F8F9F4;overscroll-behavior-y:none}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

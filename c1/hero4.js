@@ -1,5 +1,7 @@
 /* Concept 4 hero background: a full-bleed grid of squares whose size follows slow travelling waves.
-   Palette only (pale blue, mid blue, blue, a few orange cells). Calm, looped, paused off-screen.
+   Palette: pale blue, mid blue, blue, plus a few accent cells that each carry one RAL Classic colour
+   (1023 traffic yellow, 2004 pure orange, 3020 traffic red, 4005 blue lilac, 5015 sky blue, 6018 yellow green,
+   6027 light green, 9003 signal white). A cell keeps its RAL colour for as long as it is an accent cell. Calm, looped, paused off-screen.
    Static frame for ?static and prefers-reduced-motion. */
 (function () {
   var wrap = document.querySelector('.hero-bg');
@@ -9,7 +11,7 @@
   var ctx = cv.getContext('2d');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var still = reduce || /[?&]static/.test(location.search);
-  var PALE = '175,186,208', MID = '93,115,160', BLUE = '29,59,123', ORANGE = '215,92,50';
+  var PALE = '175,186,208', MID = '93,115,160', BLUE = '29,59,123', RAL = ['250,210,1', '231,91,18', '204,6,5', '108,70,117', '34,113,179', '87,166,57', '126,186,181', '244,244,244'];
   var W = 0, H = 0, dpr = 1, pitch = 44, cols = 0, rows = 0;
   var running = false, t0 = 0, raf = 0, visible = true, last = 0;
 
@@ -46,7 +48,7 @@
         var size = pitch * s * 0.92;
         var px = i * pitch + (pitch - size) / 2, py = j * pitch + (pitch - size) / 2;
         var col, a;
-        if (s > 0.62 && hash(i, j) < 0.045) { col = ORANGE; a = 0.9; }
+        if (s > 0.62 && hash(i, j) < 0.06) { col = RAL[Math.floor(hash(j + 7.3, i + 3.1) * RAL.length)]; a = 0.92; }
         else if (s > 0.5) { col = BLUE; a = 0.9; }
         else if (s > 0.28) { col = MID; a = 0.42; }
         else { col = PALE; a = 0.26; }

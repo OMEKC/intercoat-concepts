@@ -88,7 +88,8 @@ h2,.news-head h2{font-size:clamp(26px,2.5vw,38px);line-height:1.1}
 #contact .l{justify-content:flex-start}
 #contact .l .contact-details{margin-top:auto}
 /* buttons: no underline/hover decoration */
-.pill-btn,.pill-btn:hover,.btn.orange:hover{text-decoration:none;border-bottom:0}
+.pill-btn,.pill-btn:hover,.btn.orange:hover{text-decoration:none}
+.btn.orange,.btn.orange:hover{border-bottom:0}
 /* FOOTER: navy */
 #footer{background:#0F1F38;color:#FEFEFE;padding:clamp(48px,5vw,72px) 0 24px;position:relative}
 #footer .rule{border-top:0;padding-top:0}
@@ -122,7 +123,7 @@ h2,.news-head h2{font-size:clamp(26px,2.5vw,38px);line-height:1.1}
 .st-photo{display:block;width:100%;max-width:520px;height:auto;aspect-ratio:1400/398;margin-top:32px}
 
 /* ===== FIGMA SYNC (round 27): spacing and logo cells as in the edited mockups ===== */
-.pill-btn,.language-trigger,.language-search,.language-option,.btn.orange{border-radius:0}
+.pill-btn,.language-trigger,.language-search,.language-option,.btn.orange,.nav-btn,.burger,.ic-x,.ic-done{border-radius:0}
 @media(min-width:901px){
 .cq .head p{margin-top:24px}
 .cq .rule{row-gap:7px}

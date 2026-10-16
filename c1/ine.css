@@ -222,3 +222,5 @@ body{background:#0F1F38}main{background:#FEFEFE}
 #footer{padding-top:44px;padding-bottom:20px}
 #footer .footer-bottom{padding-top:18px}
 @media(max-width:900px){#footer .footer-bottom{margin-top:36px}}
+html{overscroll-behavior-y:none;background:#0F1F38}
+#footer{padding-bottom:16px}

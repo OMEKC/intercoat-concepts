@@ -341,3 +341,9 @@ main>#contact{padding-top:56px;padding-bottom:68px}
 #footer{padding-bottom:20px}
 @media(max-width:900px){#footer .footer-bottom{margin-top:40px;flex-wrap:wrap;row-gap:12px}}
 #footer{padding-top:calc(var(--sheet-r) + 20px)}
+/* round 30: footer in the brand blue; no rubber-band gap below the footer */
+html{background:#1E6190}
+#footer{background:#1E6190}
+#footer .footer-description span,#footer .footer-col span{color:rgba(254,254,254,.78)}
+#footer .footer-bottom,#footer .footer-bottom *{color:rgba(254,254,254,.85)}
+#footer .footer-bottom{border-top-color:rgba(254,254,254,.3)}
